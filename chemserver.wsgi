@@ -8,4 +8,4 @@ import sys
 sys.path.insert(0,'/var/www/zq_webserver/')
 print "Path prepared ..."
 
-from chemserver2 import app as application
+from chemserver import app as application
