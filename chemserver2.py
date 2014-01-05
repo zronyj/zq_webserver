@@ -13,7 +13,7 @@ from email.MIMEBase import MIMEBase
 from email.MIMEMultipart import MIMEMultipart
 from email import Encoders
 
-app = flask.Flask(__name__)
+chemserver = flask.Flask(__name__)
 
 datos = ""
 ALLOWED_EXTENSIONS = set(['zip'])
@@ -198,10 +198,10 @@ class ADVina(MethodView):
         os.mkdir('advina_files')
 
 
-app.add_url_rule('/firefly/', view_func=Firefly.as_view('firefly'), methods=['GET', 'POST'])
-app.add_url_rule('/autodock/', view_func=AD4.as_view('autodock'), methods=['GET', 'POST'])
-app.add_url_rule('/advina/', view_func=ADVina.as_view('advina'), methods=['GET', 'POST'])
+chemserver.add_url_rule('/firefly/', view_func=Firefly.as_view('firefly'), methods=['GET', 'POST'])
+chemserver.add_url_rule('/autodock/', view_func=AD4.as_view('autodock'), methods=['GET', 'POST'])
+chemserver.add_url_rule('/advina/', view_func=ADVina.as_view('advina'), methods=['GET', 'POST'])
 
-app.debug = True
+chemserver.debug = True
 if __name__ == '__main__':
-	app.run()
+	chemserver.run()
