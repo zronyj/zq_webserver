@@ -1,0 +1,68 @@
+html, body {
+	margin:0;
+	padding:0;
+	height:100%;
+	width: 100%;
+}
+
+h3 {
+	font-size: 1.2em;
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+.navbtn {
+	margin-left: 3em;
+	margin-right: 3em;
+}
+
+.content {
+	min-height: 100%;
+	position:relative;
+	padding-top: 4%;
+}
+
+.main {
+	padding:10px;
+	padding-bottom: 60px;
+}
+
+.footer {
+	left:0;
+	bottom:0;
+	height:60px;
+	width:100%;
+	text-align: right;
+}
+
+.btm-desc {
+	vertical-align: middle;
+	padding: 0em 1em 1em 1em;
+}
+
+.move-right {
+	text-align: right;
+}
+
+.login-box {
+	border: 2px solid;
+	border-radius: 5px;
+	width: 60%;
+	padding: 10px 10px 10px 10px;
+}
+
+.main-view {
+	width: 100%;
+	vertical-align: middle;
+}
+
+.left-side {
+	width: 50%;
+	height: 100%;
+}
+.right-side {
+	width: 50%;
+	height: 100%;
+}
