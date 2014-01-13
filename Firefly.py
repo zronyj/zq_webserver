@@ -12,10 +12,12 @@ class Firefly(MethodView):
 
     def __init__(self):
         logging.info('Firefly class started! Waiting for user to make requests.')
-    
+
+    @login_required
     def get(self):
         return flask.render_template('firefly.html')
 
+    @login_required
     def post(self):
 	global threads
 	threads = clean_threads()

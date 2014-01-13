@@ -19,10 +19,12 @@ class ADVina(MethodView):
     def __init__(self):
         self.working_dir = os.getcwd() + '/advina_files/'
         logging.info('AutoDock Vina class started! Waiting for user to make requests.')
-    
+
+    @login_required
     def get(self):
         return flask.render_template('advina.html')
 
+    @login_required
     def post(self):
         threads = clean_threads()
         logging.info('User requested to add new data.')

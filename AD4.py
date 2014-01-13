@@ -19,10 +19,12 @@ class AD4(MethodView):
     def __init__(self):
         self.working_dir = os.getcwd() + '/ad4_files/'
         logging.info('AutoDock4 class started! Waiting for user to make requests.')
-    
+
+    @login_required
     def get(self):
         return flask.render_template('ad4.html')
 
+    @login_required
     def post(self):
         threads = clean_threads()
         logging.info('User requested to add new data.')

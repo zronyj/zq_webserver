@@ -9,6 +9,8 @@ h3 {
 	font-size: 1.2em;
 }
 
+.wraper{ width:100%; max-width:1080px; }
+
 .dropdown:hover .dropdown-menu {
 	display: block;
 }
@@ -19,7 +21,7 @@ h3 {
 }
 
 .content {
-	min-height: 100%;
+	min-height: 95%;
 	position:relative;
 	padding-top: 4%;
 }
@@ -30,6 +32,7 @@ h3 {
 }
 
 .footer {
+	position: absolute;
 	left:0;
 	bottom:0;
 	height:60px;
@@ -47,8 +50,9 @@ h3 {
 }
 
 .login-box {
-	border: 2px solid;
+	border: 0px;
 	border-radius: 5px;
+	background: rgba(255,255,255,0.7);
 	width: 60%;
 	padding: 10px 10px 10px 10px;
 }

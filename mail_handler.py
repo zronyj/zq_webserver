@@ -1,6 +1,8 @@
 import os
+import flask
 import smtplib
 import logging
+import functools
 import threading
 from email.Utils import formatdate
 from email.mime.text import MIMEText
@@ -24,6 +26,16 @@ def clean_threads(threads=threads):
         return []
     else:
         return threads
+
+def login_required(method):
+    @functools.wraps(method)
+    def wrapper(*args, **kwargs):
+        if 'username' in flask.session:
+            return method(*args, **kwargs)
+        else:
+            flask.flash(flask.Markup("You need to log in to access <em>Zq Computational</em>."))
+            return flask.redirect(flask.url_for("welcome"))
+    return wrapper
 
 def send_mail(para, titulo, contenido, adjuntos=[]):
     msg = MIMEMultipart()
